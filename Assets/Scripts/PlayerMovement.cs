@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour {
 		Axis.x = CrossPlatformInputManager.GetAxisRaw("Horizontal");
 		Axis.y = CrossPlatformInputManager.GetAxisRaw("Vertical");
 
-		GetComponent<Rigidbody2D>().MovePosition(Vector2.MoveTowards(transform.position, transform.position + Axis , sprint * speed * Time.fixedDeltaTime));
+		GetComponent<Rigidbody2D>().MovePosition(Vector2.MoveTowards(transform.position, transform.position + Axis , speed * Time.fixedDeltaTime));
 	}
 
 }

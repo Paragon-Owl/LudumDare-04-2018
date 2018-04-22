@@ -5,9 +5,12 @@ using UnityStandardAssets.CrossPlatformInput;
 public class Player : MonoBehaviour {
 
 	private bool isFiring = false;
+	public float speed = 1f;
+	private Vector3 Axis = Vector3.zero;
 
 	private Vector2 aimDir;
 	public Weapon equipedWeapon;
+	public Animator spriteAnimator;
 
 	// Use this for initialization
 	void Start () {
@@ -22,9 +25,21 @@ public class Player : MonoBehaviour {
 		if(CrossPlatformInputManager.GetButton("Reload"))
 			equipedWeapon.Reload();
 
-		//Manette
-		aimDir.y = CrossPlatformInputManager.GetAxisRaw("AimVertical");
-		aimDir.x = CrossPlatformInputManager.GetAxisRaw("AimHorizontal");
+		// Player Movement (directionVector)
+		Axis.x = CrossPlatformInputManager.GetAxisRaw("Horizontal");
+		Axis.y = CrossPlatformInputManager.GetAxisRaw("Vertical");
+
+		// Player Aim (directionVector)
+		if(Input.GetJoystickNames().Length>0)
+		{
+			aimDir.y = CrossPlatformInputManager.GetAxisRaw("AimVertical");
+			aimDir.x = CrossPlatformInputManager.GetAxisRaw("AimHorizontal");
+		}
+		else
+			AimMouse();
+
+
+		Animation();
 
 	}
 
@@ -35,6 +50,9 @@ public class Player : MonoBehaviour {
 	{
 		if(isFiring && equipedWeapon!= null)
 			equipedWeapon.Fire(aimDir);
+
+		GetComponent<Rigidbody2D>().MovePosition(Vector2.MoveTowards(transform.position, transform.position + Axis , speed * Time.fixedDeltaTime));
+
 	}
 
 	/// <summary>
@@ -43,6 +61,25 @@ public class Player : MonoBehaviour {
 	/// </summary>
 	void OnGUI()
 	{
-		GUI.Label(new Rect(10,10,100,25), "Right " + aimDir.x + " : " + aimDir.y);
+		GUI.Label(new Rect(10,10,500,50), "Aim " + aimDir);
+	}
+
+	void AimMouse()
+	{
+
+        Camera  c = Camera.main;
+        Vector2 mousePos = Input.mousePosition;
+
+        mousePos.y = c.pixelHeight - mousePos.y;
+		Vector3 cursorWordPos = c.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, c.nearClipPlane));
+
+		aimDir = 10*(transform.position - cursorWordPos);
+		aimDir.x*=-1;
+
+	}
+
+	private void Animation()
+	{
+
 	}
 }

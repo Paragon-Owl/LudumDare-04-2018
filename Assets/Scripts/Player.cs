@@ -6,11 +6,12 @@ public class Player : MonoBehaviour {
 
 	private bool isFiring = false;
 
+	private Vector2 aimDir;
 	public Weapon equipedWeapon;
 
 	// Use this for initialization
 	void Start () {
-
+		aimDir = Vector2.zero;
 	}
 
 	// Update is called once per frame
@@ -21,6 +22,10 @@ public class Player : MonoBehaviour {
 		if(CrossPlatformInputManager.GetButton("Reload"))
 			equipedWeapon.Reload();
 
+		//Manette
+		aimDir.y = CrossPlatformInputManager.GetAxisRaw("AimVertical");
+		aimDir.x = CrossPlatformInputManager.GetAxisRaw("AimHorizontal");
+
 	}
 
 	/// <summary>
@@ -29,6 +34,15 @@ public class Player : MonoBehaviour {
 	void FixedUpdate()
 	{
 		if(isFiring && equipedWeapon!= null)
-			equipedWeapon.Fire();
+			equipedWeapon.Fire(aimDir);
+	}
+
+	/// <summary>
+	/// OnGUI is called for rendering and handling GUI events.
+	/// This function can be called multiple times per frame (one call per event).
+	/// </summary>
+	void OnGUI()
+	{
+		GUI.Label(new Rect(10,10,100,25), "Right " + aimDir.x + " : " + aimDir.y);
 	}
 }

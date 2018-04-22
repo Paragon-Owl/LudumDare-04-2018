@@ -15,8 +15,10 @@ public class Weapon : MonoBehaviour {
 	public float reloadTime = 10f;
 	public float fireRate = 1f;
 	public int ammunitionCapacity = 10;
+	public float ammunitionSpeed = 1f;
 	private float currentAmmunition;
 	private float inverseFireRate;
+	private Vector2 direction;
 
 	private bool isReloading;
 	private bool isFiring;
@@ -56,7 +58,8 @@ public class Weapon : MonoBehaviour {
 			if(currentAmmunition > 0 && Time.time-lastFireTime >= 1*inverseFireRate)
 			{
 				lastFireTime = Time.time;
-				Instantiate(projectile, projectileAnchor.position, Quaternion.identity);
+				Projectile proj = Instantiate(projectile, projectileAnchor.position, Quaternion.identity).GetComponent<Projectile>();
+				proj.AddForce(direction, ammunitionSpeed);
 				currentAmmunition--;
 				audioSource.clip = FireSound;
 			}
@@ -64,14 +67,12 @@ public class Weapon : MonoBehaviour {
 			{
 				audioSource.clip = FireEmptySound;
 			}
-
-			Debug.Log("Fire");
 			audioSource.Play();
 		}
 		isFiring = false;
 	}
 
-	public void Fire() {isFiring = true;}
+	public void Fire(Vector2 direction) { this.direction=direction;isFiring = true;}
 
 	public void Reload() {
 		if(isReloading)

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class ItemSelector : MonoBehaviour {
 
-	public Color c;
+	public Color activeColor;
 
 	private ArrayList myKeys;
 
@@ -33,7 +33,7 @@ public class ItemSelector : MonoBehaviour {
 			foreach (Image image in ItemsGUI) {
 				image.color = Color.white;
 			}
-			ItemsGUI[index].color = c; //new Color(255 / 255.0f, 208 / 255.0f, 171 / 255.0f, 255 / 255.0f);
+			ItemsGUI[index].color = activeColor; //new Color(255 / 255.0f, 208 / 255.0f, 171 / 255.0f, 255 / 255.0f);
 		}
 	}
 }

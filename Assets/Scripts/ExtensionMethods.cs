@@ -9,7 +9,7 @@ public static class ExtensionMethods {
         int indexer = gameObject.transform.Cast<Transform>().Count(transform => transform.GetComponent<T>() != null);
         var returnArray = new T[indexer];
         indexer = 0;
-        
+
         foreach (Transform transform in gameObject.transform) {
             if (transform.GetComponent<T>() != null) {
                 returnArray[indexer++] = transform.GetComponent<T>();

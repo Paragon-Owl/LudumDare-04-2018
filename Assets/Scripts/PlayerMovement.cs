@@ -18,14 +18,4 @@ public class PlayerMovement : MonoBehaviour {
 
 		GetComponent<Rigidbody2D>().MovePosition(Vector2.MoveTowards(transform.position, transform.position + Axis , speed * Time.fixedDeltaTime));
 	}
-
-	/// <summary>
-	/// OnGUI is called for rendering and handling GUI events.
-	/// This function can be called multiple times per frame (one call per event).
-	/// </summary>
-	void OnGUI()
-	{
-		GUI.Label(new Rect(10,40,100,25), "Left " + Axis.x + " : " + Axis.y);
-	}
-
 }

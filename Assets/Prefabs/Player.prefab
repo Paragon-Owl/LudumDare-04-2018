@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 61459989970008452}
   - component: {fileID: 114401764816656958}
   - component: {fileID: 114477280921018848}
+  - component: {fileID: 114781741382464614}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -289,7 +290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   equipedWeapon: {fileID: 114711472171582054}
-
+  spriteAnimator: {fileID: 0}
 --- !u!114 &114477280921018848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -303,7 +304,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actifItem: []
   seeds: []
-  spriteAnimator: {fileID: 95772367546523664}
 --- !u!114 &114711472171582054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -326,7 +326,7 @@ MonoBehaviour:
   ammunitionSpeed: 10
 --- !u!114 &114781741382464614
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1221474252752204}

@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 50038914186323086}
   - component: {fileID: 61459989970008452}
   - component: {fileID: 114401764816656958}
+  - component: {fileID: 114477280921018848}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -270,6 +271,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   equipedWeapon: {fileID: 114711472171582054}
+--- !u!114 &114477280921018848
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1221474252752204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad7cdb18a28c2ed4ab76465b6e2eb997, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actifItem: []
+  seeds: []
 --- !u!114 &114711472171582054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -301,7 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa5510968cd13f04ab94629a91f0cabd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 10
 --- !u!212 &212498647664306050
 SpriteRenderer:
   m_ObjectHideFlags: 1

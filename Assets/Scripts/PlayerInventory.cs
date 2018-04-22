@@ -1,35 +1,54 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
 
-	public GameObject itemLibrary;
-
-	private Dictionary<GameObject, int> inventory;
+	public List<GameObject> actifItem;
+	public List<GameObject> seeds;
+	
+	private Dictionary<GameObject, int> passifInventory = new Dictionary<GameObject, int>();
 	
 	public void addItem(GameObject item, int quantity)
 	{
-		if (inventory.ContainsKey(item))
+		if (passifInventory.ContainsKey(item))
 		{
-			inventory[item] += quantity;
+			passifInventory[item] += quantity;
 		}
 		else
 		{
-			inventory.Add(item,quantity);
+			passifInventory.Add(item,quantity);
 		}
+	}
+
+	public Dictionary<GameObject, int> getInventory()
+	{
+		return passifInventory;
 	}
 
 	public void removeItem(GameObject item, int quantity)
 	{
-		if (inventory.ContainsKey(item))
+		if (passifInventory.ContainsKey(item))
 		{
-			inventory[item] -= quantity;
-			if (inventory[item] <= 0)
+			passifInventory[item] -= quantity;
+			if (passifInventory[item] <= 0)
 			{
-				inventory.Remove(item);
+				passifInventory.Remove(item);
 			}
+		}
+	}
+
+	public GameObject getItemFromIndex(int index)
+	{
+		if (index > 2)
+		{
+			return seeds[index - 2];
+		}
+		else
+		{
+			return actifItem[index];
 		}
 	}
 }

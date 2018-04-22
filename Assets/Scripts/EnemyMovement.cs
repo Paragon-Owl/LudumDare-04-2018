@@ -42,18 +42,18 @@ public class EnemyMovement : MonoBehaviour
     {
         Debug.Log("J'encule ta mere");
     }
-
+/*
     public void OnDrawGizmos()
     {
-        /*
         foreach (Node n in Astar.matrice.GetMatrice())
         {
-                Gizmos.color = (n.isWalkable) ? Color.blue : Color.red;
-            if(path.Contains(n.worldPosition))
+            Gizmos.color = (n.isWalkable) ? Color.blue : Color.red;
+            if(path != null && path.Contains(n.worldPosition))
                 Gizmos.color = Color.cyan;
             if(Astar.matrice.NodeFromWorldPoint(transform.position) == n)
                 Gizmos.color = Color.black;
             Gizmos.DrawCube(n.worldPosition, Vector3.one * (float) 0.9);
-        }*/
+        }
     }
+    */
 }

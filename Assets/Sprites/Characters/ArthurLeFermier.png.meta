@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 4f14568a293d67c44ad747a3ec0b7696
-timeCreated: 1524385131
+guid: 9acfb3079e67e9a40aa25d21a8efb9d3
+timeCreated: 1524402695
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -24,6 +24,10 @@ TextureImporter:
     21300034: ArthurLeFermier_17
     21300036: ArthurLeFermier_18
     21300038: ArthurLeFermier_19
+    21300040: ArthurLeFermier_20
+    21300042: ArthurLeFermier_21
+    21300044: ArthurLeFermier_22
+    21300046: ArthurLeFermier_23
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -245,7 +249,7 @@ TextureImporter:
       name: ArthurLeFermier_8
       rect:
         serializedVersion: 2
-        x: 16
+        x: 0
         y: 32
         width: 16
         height: 32
@@ -259,7 +263,7 @@ TextureImporter:
       name: ArthurLeFermier_9
       rect:
         serializedVersion: 2
-        x: 32
+        x: 16
         y: 32
         width: 16
         height: 32
@@ -273,7 +277,7 @@ TextureImporter:
       name: ArthurLeFermier_10
       rect:
         serializedVersion: 2
-        x: 48
+        x: 32
         y: 32
         width: 16
         height: 32
@@ -287,7 +291,7 @@ TextureImporter:
       name: ArthurLeFermier_11
       rect:
         serializedVersion: 2
-        x: 64
+        x: 48
         y: 32
         width: 16
         height: 32
@@ -301,7 +305,7 @@ TextureImporter:
       name: ArthurLeFermier_12
       rect:
         serializedVersion: 2
-        x: 80
+        x: 64
         y: 32
         width: 16
         height: 32
@@ -315,7 +319,7 @@ TextureImporter:
       name: ArthurLeFermier_13
       rect:
         serializedVersion: 2
-        x: 96
+        x: 80
         y: 32
         width: 16
         height: 32
@@ -329,8 +333,8 @@ TextureImporter:
       name: ArthurLeFermier_14
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
+        x: 96
+        y: 32
         width: 16
         height: 32
       alignment: 0
@@ -343,8 +347,8 @@ TextureImporter:
       name: ArthurLeFermier_15
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
+        x: 112
+        y: 32
         width: 16
         height: 32
       alignment: 0
@@ -357,7 +361,7 @@ TextureImporter:
       name: ArthurLeFermier_16
       rect:
         serializedVersion: 2
-        x: 48
+        x: 0
         y: 0
         width: 16
         height: 32
@@ -371,7 +375,7 @@ TextureImporter:
       name: ArthurLeFermier_17
       rect:
         serializedVersion: 2
-        x: 64
+        x: 16
         y: 0
         width: 16
         height: 32
@@ -385,7 +389,7 @@ TextureImporter:
       name: ArthurLeFermier_18
       rect:
         serializedVersion: 2
-        x: 80
+        x: 32
         y: 0
         width: 16
         height: 32
@@ -399,7 +403,63 @@ TextureImporter:
       name: ArthurLeFermier_19
       rect:
         serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ArthurLeFermier_20
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ArthurLeFermier_21
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ArthurLeFermier_22
+      rect:
+        serializedVersion: 2
         x: 96
+        y: 0
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: ArthurLeFermier_23
+      rect:
+        serializedVersion: 2
+        x: 112
         y: 0
         width: 16
         height: 32

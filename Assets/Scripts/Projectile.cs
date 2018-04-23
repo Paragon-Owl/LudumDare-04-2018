@@ -9,11 +9,6 @@ public class Projectile : MonoBehaviour {
 	public float drag = 0.1f;
 	public float damage;
 
-	// Use this for initialization
-	void Start () {
-
-	}
-
 	// Update is called once per frame
 	void Update () {
 		Vector2 v = direction*speed*Time.deltaTime;
@@ -28,5 +23,22 @@ public class Projectile : MonoBehaviour {
 	{
 		this.direction = direction;
 		speed = force;
+	}
+
+	/// <summary>
+	/// Sent when another object enters a trigger collider attached to this
+	/// object (2D physics only).
+	/// </summary>
+	/// <param name="other">The other Collider2D involved in this collision.</param>
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		/*Enemy en = other.gameObject.GetComponent<Enemy>();
+
+		if(en)
+		{
+			Debug.Log("EnemyCollision");
+		}
+
+		Destroy(gameObject);*/
 	}
 }

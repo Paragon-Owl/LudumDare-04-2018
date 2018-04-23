@@ -89,8 +89,6 @@ public class Player : MonoBehaviour {
 		aimDir.Normalize();
 		aimDir.x*=-1;
 
-
-
 	}
 
 	private void Animation()

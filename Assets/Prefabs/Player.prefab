@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49bbc6187d12f5f4e80c5e3856f19c60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 5
   equipedWeapon: {fileID: 114711472171582054}
   spriteAnimator: {fileID: 95772367546523664}
   animationNames:

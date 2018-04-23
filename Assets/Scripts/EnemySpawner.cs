@@ -10,26 +10,32 @@ public class EnemySpawner : MonoBehaviour
 	public Tilemap notWalkable;
 	public Tilemap map;
 	private List<EnemyMovement> enemiesMovement;
-	private double timeLapse;
 	private double startTime;
 	private bool on;
 	private int indexSaved;
+	private int numberOfEnemy;
+	private int wantedEnemy;
 	private const int MaxAstarRequest = 10;
+	private double timeForSpawn = 0.5;
 
 	private void Start()
 	{
 		enemiesMovement = new List<EnemyMovement>();
-		//Astar.matrice = new Matrice(Vector2.zero, notWalkable);
 		Astar.matrice = new Matrice(notWalkable,map);
 	}
 	private void FixedUpdate()
 	{
 		if (on)
 		{
-			if (Time.time - startTime > timeLapse)
+			if (Time.time - startTime > timeForSpawn)
 			{
 				spawnEnemy();
+				numberOfEnemy++;
 				startTime = Time.time;
+				if (numberOfEnemy >= wantedEnemy)
+				{
+					stopSpawner();
+				}
 			}
 		}
 
@@ -76,14 +82,14 @@ public class EnemySpawner : MonoBehaviour
 		enemiesMovement.Add(newEnemy.GetComponent<EnemyMovement>());
 	}
 
-	public void startSpawner(double timeForSpawn)
+	public void startSpawner(int nbOfEnemy)
 	{
 		if (!on)
 		{
-			Debug.Log("Je lance le Spawner");
-			timeLapse = timeForSpawn;
+			numberOfEnemy = 0;
 			startTime = Time.time;
-			on = true;	
+			on = true;
+			wantedEnemy = nbOfEnemy;
 		}
 	}
 
@@ -91,7 +97,6 @@ public class EnemySpawner : MonoBehaviour
 	{
 		if (on)
 		{
-			Debug.Log("Je stop le spawner");
 			on = false;	
 		}
 	}

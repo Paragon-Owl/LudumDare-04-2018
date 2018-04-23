@@ -28,6 +28,26 @@ public class PlayerInventory : MonoBehaviour
 		return passifInventory;
 	}
 
+	public int fill(int quantityNeeded)
+	{
+		int whatIhave = 0;
+		foreach (var a in passifInventory)
+		{
+			if (whatIhave < quantityNeeded)
+			{
+				if (whatIhave + a.Value >= quantityNeeded)
+				{
+					passifInventory[a.Key] = whatIhave + a.Value - quantityNeeded;
+					return quantityNeeded;
+				}
+				whatIhave += a.Value;
+				passifInventory[a.Key] = 0;
+			}
+		}
+
+		return whatIhave;
+	}
+	
 	public void removeItem(GameObject item, int quantity)
 	{
 		if (passifInventory.ContainsKey(item))

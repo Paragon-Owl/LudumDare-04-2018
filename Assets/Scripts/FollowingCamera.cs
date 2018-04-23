@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FollowingCamera : MonoBehaviour {
 
-	private GameObject player;
+	public GameObject player;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +16,8 @@ public class FollowingCamera : MonoBehaviour {
 	/// </summary>
 	void FixedUpdate()
 	{
+		Debug.Log(player.name);
+		Debug.Log(player.transform.position);
 		transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
 		transform.LookAt(transform);
 	}

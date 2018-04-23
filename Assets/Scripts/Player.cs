@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour
+{
 
+	public GameManager GameManager;
 	public List<GameObject> equipableObject;
 
 	private bool isFiring = false;
@@ -15,6 +17,7 @@ public class Player : MonoBehaviour {
 	private Vector2 fireDirection = Vector2.right;
 	public UsableObject equipedObject;
 	public Animator spriteAnimator;
+	public PlayerInventory inventory;
 	public List<string> animationNames = new List<string>{
 		"PlayerEast",
 		"PlayerNorthEast",
@@ -30,6 +33,7 @@ public class Player : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		aimDir = Vector2.zero;
+		inventory = GetComponent<PlayerInventory>();
 	}
 
 	// Update is called once per frame
@@ -42,6 +46,12 @@ public class Player : MonoBehaviour {
 
 		if(CrossPlatformInputManager.GetButtonDown("Action"))
 		{
+			if (GetComponentInChildren<Pickup>().isCollidingTruck())
+			{
+				int quantityNeeded = GameManager.getTruckStockMissing();
+				int quantityAvailable = inventory.fill(quantityNeeded);
+				GameManager.addInTruckStock(quantityAvailable);	
+			}
 			int count = GetComponentInChildren<Pickup>().getCrops();
 			if(count > 0)
 				GetComponent<PlayerInventory>().addItem(GetComponent<PlayerInventory>().getItemFromIndex(3), count);

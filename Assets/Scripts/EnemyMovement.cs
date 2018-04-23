@@ -7,9 +7,9 @@ public class EnemyMovement : MonoBehaviour
 {
     public Transform target;
     private bool dead;
-    private double timeBetween2Request = 1;
+    private double timeBetween2Request = 0.2;
     private double lastRequest;
-    private Vector2[] path;
+    public Vector2[] path;
     private int actualTargetIndex = 1;
     private const int Speed = 3;
     
@@ -32,7 +32,6 @@ public class EnemyMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        path = Astar.FindPath(transform.position, target.position);
         moveObject();
     }
 
@@ -44,6 +43,7 @@ public class EnemyMovement : MonoBehaviour
 
     public bool needARequest()
     {
+        Debug.Log(Time.time - lastRequest > timeBetween2Request);
         return Time.time - lastRequest > timeBetween2Request;
     }
 
@@ -84,7 +84,7 @@ public class EnemyMovement : MonoBehaviour
     {
         dead = true;
     }
-
+/*
     public void OnDrawGizmos()
     {
         Debug.Log(Astar.matrice);
@@ -98,5 +98,5 @@ public class EnemyMovement : MonoBehaviour
             Gizmos.DrawCube(n.worldPosition, Vector3.one * (float) 0.9);
         }
     }
-    
+    */
 }

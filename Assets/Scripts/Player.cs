@@ -4,9 +4,12 @@ using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 public class Player : MonoBehaviour {
 
+	public List<GameObject> equipableObject;
+
 	private bool isFiring = false;
 	public float speed = 1f;
 	private Vector3 Axis = Vector3.zero;
+	public int equipedObjectIndex = 0;
 
 	private Vector2 aimDir;
 	private Vector2 fireDirection = Vector2.right;
@@ -36,6 +39,26 @@ public class Player : MonoBehaviour {
 		//Reloading
 		/*if(CrossPlatformInputManager.GetButton("Reload"))
 			equipedObject.UseSecondary();*/
+
+		if(CrossPlatformInputManager.GetButtonDown("Action"))
+		{
+			int count = GetComponentInChildren<Pickup>().getCrops();
+			if(count > 0)
+				GetComponent<PlayerInventory>().addItem(GetComponent<PlayerInventory>().getItemFromIndex(3), count);
+		}
+
+		if(CrossPlatformInputManager.GetButton("InventoryLeft"))
+		{
+			equipableObject[equipedObjectIndex%equipableObject.Count].SetActive(false);
+			equipedObjectIndex++;
+			equipableObject[equipedObjectIndex%equipableObject.Count].SetActive(true);
+		}
+		else if(CrossPlatformInputManager.GetButton("InventoryRight"))
+		{
+			equipableObject[equipedObjectIndex%equipableObject.Count].SetActive(false);
+			equipedObjectIndex--;
+			equipableObject[equipedObjectIndex%equipableObject.Count].SetActive(true);
+		}
 
 		// Player Movement (directionVector)
 		Axis.x = CrossPlatformInputManager.GetAxisRaw("Horizontal");

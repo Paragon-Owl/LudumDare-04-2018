@@ -8,12 +8,16 @@ using UnityEngine.UI;
 public class ItemSelector : MonoBehaviour {
 
 	public Color activeColor;
+	private Player player;
 
 	private ArrayList myKeys;
+	private int activeKey;
 
 	private Image[] ItemsGUI;
 	// Use this for initialization
 	void Start () {
+		player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+		activeKey = 0;
 		ItemsGUI = gameObject.GetComponentsInDirectChildren<Image>();
 		foreach (Image image in ItemsGUI) {
 			Debug.Log(image);
@@ -27,6 +31,7 @@ public class ItemSelector : MonoBehaviour {
 		foreach(KeyCode key in myKeys) {
 			if (Input.GetKeyDown(key)) {
 				index = myKeys.IndexOf(key);
+
 			}
 		}
 		if (index != -1) {

@@ -65,7 +65,6 @@ public class FieldTile : MonoBehaviour {
 				if(Time.time-lastGrowingTime >= timeToHarvest)
 				{
 					currentState = State.EMPTY;
-					lastGrowingTime = Time.time;
 					changed = true;
 				}
 				break;
@@ -84,6 +83,13 @@ public class FieldTile : MonoBehaviour {
 		return false;
 	}
 
+	public int Harvest()
+	{
+		currentState = State.EMPTY;
+		changed = true;
+		return 1;
+	}
+
 	/// <summary>
 	/// Sent when another object enters a trigger collider attached to this
 	/// object (2D physics only).
@@ -91,10 +97,12 @@ public class FieldTile : MonoBehaviour {
 	/// <param name="other">The other Collider2D involved in this collision.</param>
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		Debug.Log("enter");
 		FarmingObject fo = other.gameObject.GetComponent<FarmingObject>();
-		fo.Apply(this);
-		changed = true;
+		if(fo)
+		{
+			fo.Apply(this);
+			changed = true;
+		}
 	}
 
 }

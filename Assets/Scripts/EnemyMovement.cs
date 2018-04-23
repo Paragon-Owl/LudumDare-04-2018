@@ -1,18 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
 using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.Tilemaps;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class EnemyMovement : MonoBehaviour
 {
     public Transform target;
+    private bool dead;
+    private double timeBetween2Request = 1;
+    private double lastRequest;
     private Vector2[] path;
     private int actualTargetIndex = 1;
-    private const int Speed = 10;
+    private const int Speed = 3;
     
     private Animator spriteAnimator;
     private List<string> animationNames = new List<string>{
@@ -33,12 +32,19 @@ public class EnemyMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        path = Astar.FindPath(transform.position, target.position);
         moveObject();
     }
 
     public void RequestPath()
     {
         path = Astar.FindPath(transform.position, target.position);
+        lastRequest = Time.time;
+    }
+
+    public bool needARequest()
+    {
+        return Time.time - lastRequest > timeBetween2Request;
     }
 
     private void moveObject()
@@ -68,18 +74,29 @@ public class EnemyMovement : MonoBehaviour
     {
         Debug.Log("J'encule ta mere");
     }
-/*
+
+    public bool IsDead()
+    {
+        return dead;
+    }
+
+    public void Die()
+    {
+        dead = true;
+    }
+
     public void OnDrawGizmos()
     {
+        Debug.Log(Astar.matrice);
         foreach (Node n in Astar.matrice.GetMatrice())
         {
             Gizmos.color = (n.isWalkable) ? Color.blue : Color.red;
-            if(path != null && path.Contains(n.worldPosition))
+            if(path != null && ((IList) path).Contains(n.worldPosition))
                 Gizmos.color = Color.cyan;
             if(Astar.matrice.NodeFromWorldPoint(transform.position) == n)
                 Gizmos.color = Color.black;
             Gizmos.DrawCube(n.worldPosition, Vector3.one * (float) 0.9);
         }
     }
-    */
+    
 }

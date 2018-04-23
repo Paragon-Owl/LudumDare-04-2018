@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61162374574986502}
   - component: {fileID: 212668633291494518}
   - component: {fileID: 95181406438894124}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,15 +118,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  animationNames:
-  - ZombieEast
-  - ZombieNorthEast
-  - ZombieNorth
-  - ZombieNorthWest
-  - ZombieWest
-  - ZombieSouthWest
-  - ZombieSouth
-  - ZombieSouthEast
 --- !u!212 &212668633291494518
 SpriteRenderer:
   m_ObjectHideFlags: 1

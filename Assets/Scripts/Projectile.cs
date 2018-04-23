@@ -41,12 +41,10 @@ public class Projectile : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		EnemyMovement en = other.gameObject.GetComponent<EnemyMovement>();
-
 		if(en)
 		{
-			Debug.Log("EnemyCollision");
+			other.gameObject.GetComponent<EnemyMovement>().Die();
 		}
-
 		Destroy(gameObject);
 	}
 }

@@ -23,6 +23,7 @@ public class Matrice
         CreateMatrice();
     }
 
+    //For now
     public Matrice(Vector2 center,Tilemap t)
     {
         gridWorldSize = new Vector2(100,100);
@@ -32,8 +33,20 @@ public class Matrice
         gridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeDiameter);
         CreateMatrice(t);
     }
+    
+    public Matrice(Tilemap notWalkable, Tilemap map)
+    {
+        Debug.Log("New Matrice Creator");
+        gridWorldSize = new Vector2(map.cellBounds.size.x,map.cellBounds.size.y);
+        center = map.cellBounds.center;
+        Debug.Log("Nouvelle matrice center : " + center);
+        nodeDiameter = map.cellSize.x;
+        gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
+        gridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeDiameter);
+        CreateMatrice(notWalkable);
+    }
 
-    void CreateMatrice(Tilemap t)
+    void CreateMatrice(Tilemap notWalkable)
     {
         Debug.Log("Here with tilemap");
         matrice = new Node[gridSizeX, gridSizeY];
@@ -44,7 +57,7 @@ public class Matrice
             {
                 bool isWalkable;
                 Vector2 worldPoint = worldBottomLeft + Vector2.right * (x * nodeDiameter + nodeRadius) + Vector2.up * (y * nodeDiameter + nodeRadius);
-                isWalkable = ! t.HasTile(t.WorldToCell(worldPoint));
+                isWalkable = ! notWalkable.HasTile(notWalkable.WorldToCell(worldPoint));
                 matrice[x, y] = new Node(worldPoint, x, y, isWalkable);
                 
             }

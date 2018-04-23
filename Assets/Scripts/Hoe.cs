@@ -6,16 +6,16 @@ public class Hoe : FarmingObject {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
+		base.Start();
 	}
 
 	override public void Apply(FieldTile tile)
 	{
-		tile.currentState = FieldTile.State.HOED;
+		Debug.Log("Apply");
+
+		if(tile.currentState == FieldTile.State.EMPTY)
+			tile.currentState = FieldTile.State.HOED;
+
+		base.collider.enabled = false;
 	}
 }

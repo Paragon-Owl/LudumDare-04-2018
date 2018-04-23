@@ -29,21 +29,18 @@ public class CropField : MonoBehaviour {
 		GameObject gob = new GameObject("Tile");
 		gob.AddComponent<FieldTile>();
 
-		for(int i=0;i < map.size.x ;i++)
+		for(int i=map.cellBounds.position.x ;i < map.cellBounds.position.x + map.cellBounds.size.x ; i++)
 		{
-			for (int j = 0; j < map.size.y; j++)
+			for (int j = map.cellBounds.position.y ; j < map.cellBounds.position.y + map.cellBounds.size.y; j++)
 			{
-
 				Vector3Int pos = new Vector3Int(i,j,0);
 
 				if(!map.HasTile(pos))
 					continue;
-				Debug.Log(map.size + " / "+ i + " " + j);
 
 				Tile a = (Tile)map.GetTile(pos);
 				if(baseTile==a)
 				{
-					Debug.Log("Found at "+ i + " " + j);
 					FieldTile b = Instantiate(gob, map.CellToWorld(pos), Quaternion.identity, transform).GetComponent<FieldTile>();
 					b.name = "Tile"+i+"_"+j;
 					tiles.Add(b);
@@ -64,15 +61,11 @@ public class CropField : MonoBehaviour {
 			return;
 		}
 
-
-
 		foreach (FieldTile field in tiles)
 		{
 			if(field.hasChanged())
 			{
-				Debug.Log("Update");
 				DrawTile(field.tile, field.currentState);
-
 			}
 		}
 	}

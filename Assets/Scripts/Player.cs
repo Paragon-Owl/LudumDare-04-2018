@@ -10,7 +10,7 @@ public class Player : MonoBehaviour {
 
 	private Vector2 aimDir;
 	private Vector2 fireDirection = Vector2.right;
-	public Weapon equipedWeapon;
+	public UsableObject equipedObject;
 	public Animator spriteAnimator;
 	public List<string> animationNames = new List<string>{
 		"PlayerEast",
@@ -34,8 +34,8 @@ public class Player : MonoBehaviour {
 		//Firing
 		isFiring = CrossPlatformInputManager.GetAxisRaw("Fire1")<=-0.5f || CrossPlatformInputManager.GetButton("Fire1");
 		//Reloading
-		if(CrossPlatformInputManager.GetButton("Reload"))
-			equipedWeapon.Reload();
+		/*if(CrossPlatformInputManager.GetButton("Reload"))
+			equipedObject.UseSecondary();*/
 
 		// Player Movement (directionVector)
 		Axis.x = CrossPlatformInputManager.GetAxisRaw("Horizontal");
@@ -65,9 +65,9 @@ public class Player : MonoBehaviour {
 	/// </summary>
 	void FixedUpdate()
 	{
-		if(isFiring && equipedWeapon!= null)
+		if(isFiring && equipedObject!= null)
 		{
-			equipedWeapon.Fire(fireDirection);
+			equipedObject.Use(fireDirection);
 		}
 
 		GetComponent<Rigidbody2D>().MovePosition(Vector2.MoveTowards(transform.position, transform.position + Axis , speed * Time.fixedDeltaTime));

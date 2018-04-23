@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using UnityStandardAssets.CrossPlatformInput;
 public class Player : MonoBehaviour {
 
@@ -11,6 +12,17 @@ public class Player : MonoBehaviour {
 	private Vector2 aimDir;
 	public Weapon equipedWeapon;
 	public Animator spriteAnimator;
+	public List<string> animationNames = new List<string>{
+		"PlayerEast",
+		"PlayerNorthEast",
+		"PlayerNorth",
+		"PlayerNorthWest",
+		"PlayerWest",
+		"PlayerSouthWest",
+		"PlayerSouth",
+		"PlayerSouthEast"
+	};
+
 
 	// Use this for initialization
 	void Start () {
@@ -49,7 +61,7 @@ public class Player : MonoBehaviour {
 	void FixedUpdate()
 	{
 		if(isFiring && equipedWeapon!= null)
-			equipedWeapon.Fire(aimDir);
+			equipedWeapon.Fire(aimDir!=Vector2.zero?aimDir:new Vector2(Axis.x, Axis.y));
 
 		GetComponent<Rigidbody2D>().MovePosition(Vector2.MoveTowards(transform.position, transform.position + Axis , speed * Time.fixedDeltaTime));
 
@@ -73,13 +85,29 @@ public class Player : MonoBehaviour {
         mousePos.y = c.pixelHeight - mousePos.y;
 		Vector3 cursorWordPos = c.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, c.nearClipPlane));
 
-		aimDir = 10*(transform.position - cursorWordPos);
+		aimDir = (transform.position - cursorWordPos);
+		aimDir.Normalize();
 		aimDir.x*=-1;
+
+
 
 	}
 
 	private void Animation()
 	{
+		Vector2 dir = Axis;
+		if(aimDir!=Vector2.zero)
+		{
+			dir = aimDir;
+		}
+		float angle = Vector3.Angle(Vector3.right, dir);
 
+
+		if(dir.y < 0)
+			angle = 360-angle;
+
+		angle+=Mathf.Rad2Deg*(Mathf.PI/8f);
+		spriteAnimator.Play(animationNames[Mathf.FloorToInt(angle/45f)%animationNames.Count]);
 	}
+
 }

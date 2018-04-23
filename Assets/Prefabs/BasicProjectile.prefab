@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  drag: 0.1
+  drag: 1
   damage: 0
 --- !u!212 &212074811993485928
 SpriteRenderer:

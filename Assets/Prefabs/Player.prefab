@@ -57,7 +57,6 @@ GameObject:
   - component: {fileID: 61459989970008452}
   - component: {fileID: 114401764816656958}
   - component: {fileID: 114477280921018848}
-  - component: {fileID: 114781741382464614}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -199,7 +198,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 3.2303338
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -290,7 +289,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   equipedWeapon: {fileID: 114711472171582054}
-  spriteAnimator: {fileID: 0}
+  spriteAnimator: {fileID: 95772367546523664}
+  animationNames:
+  - PlayerEast
+  - PlayerNorthEast
+  - PlayerNorth
+  - PlayerNorthWest
+  - PlayerWest
+  - PlayerSouthWest
+  - PlayerSouth
+  - PlayerSouthEast
 --- !u!114 &114477280921018848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -324,18 +332,6 @@ MonoBehaviour:
   fireRate: 5.01
   ammunitionCapacity: 10
   ammunitionSpeed: 10
---- !u!114 &114781741382464614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1221474252752204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa5510968cd13f04ab94629a91f0cabd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
 --- !u!212 &212498647664306050
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -379,4 +375,4 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 2

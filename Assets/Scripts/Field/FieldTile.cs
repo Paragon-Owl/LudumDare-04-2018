@@ -25,7 +25,7 @@ public class FieldTile : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		currentState = State.PLANTED;
+		currentState = State.EMPTY;
 		lastGrowingTime = Time.time;
 		changed = false;
 		BoxCollider2D b = gameObject.AddComponent<BoxCollider2D>();
@@ -91,8 +91,10 @@ public class FieldTile : MonoBehaviour {
 	/// <param name="other">The other Collider2D involved in this collision.</param>
 	void OnTriggerEnter2D(Collider2D other)
 	{
+		Debug.Log("enter");
 		FarmingObject fo = other.gameObject.GetComponent<FarmingObject>();
 		fo.Apply(this);
+		changed = true;
 	}
 
 }

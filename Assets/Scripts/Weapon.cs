@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-public class Weapon : MonoBehaviour {
+public class Weapon : UsableObject {
 
 	public AudioClip FireSound;
 	public AudioClip FireEmptySound;
@@ -60,7 +60,7 @@ public class Weapon : MonoBehaviour {
 				lastFireTime = Time.time;
 				Projectile proj = Instantiate(projectile, projectileAnchor.position, Quaternion.identity).GetComponent<Projectile>();
 				proj.AddForce(direction, ammunitionSpeed);
-				currentAmmunition--;
+				//currentAmmunition--;
 				audioSource.clip = FireSound;
 			}
 			else
@@ -72,7 +72,7 @@ public class Weapon : MonoBehaviour {
 		isFiring = false;
 	}
 
-	public void Fire(Vector2 direction) { this.direction=direction;isFiring = true;}
+	override public void Use(Vector2 direction) { this.direction=direction;isFiring = true;}
 
 	public void Reload() {
 		if(isReloading)

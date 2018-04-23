@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 41d5afee5e6d8e446b83155c21ade5e1
+timeCreated: 1524489292
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - baseTile: {fileID: 11400000, guid: 87091f1519db4084191e6c25196290c1, type: 2}
+  - hoedTile: {fileID: 11400000, guid: 5b19757e87cfde741812b6858e90ca51, type: 2}
+  - plantedTile: {fileID: 11400000, guid: c62690db950565d47aa5724e947a8798, type: 2}
+  - growingTile: {fileID: 11400000, guid: 6344bffa9bb28f34aa39fdd4c3dc0a34, type: 2}
+  - grownTile: {fileID: 11400000, guid: 9f4eb2bfbf1c9984986fe7ab0928df6e, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

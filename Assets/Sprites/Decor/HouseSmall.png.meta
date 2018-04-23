@@ -1,33 +1,27 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: c03a6d28fffc3a94184a1f9a4bd59007
-=======
-guid: a68fde506c6a79e428601a4413bee4fa
->>>>>>> fc0519f005061bdfddcdc02c6cc01e04247cf70e
-timeCreated: 1524385455
-licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Maison1_0
-    21300002: Maison1_1
-    21300004: Maison1_2
-    21300006: Maison1_3
-    21300008: Maison1_4
-    21300010: Maison1_5
-    21300012: Maison1_6
-    21300014: Maison1_7
-    21300016: Maison1_8
-    21300018: Maison1_9
-    21300020: Maison1_10
-    21300022: Maison1_11
-    21300024: Maison1_12
-    21300026: Maison1_13
-    21300028: Maison1_14
-    21300030: Maison1_15
-    21300032: Maison1_16
-    21300034: Maison1_17
-    21300036: Maison1_18
-    21300038: Maison1_19
+    21300000: HouseSmall_0
+    21300002: HouseSmall_1
+    21300004: HouseSmall_2
+    21300006: HouseSmall_3
+    21300008: HouseSmall_4
+    21300010: HouseSmall_5
+    21300012: HouseSmall_6
+    21300014: HouseSmall_7
+    21300016: HouseSmall_8
+    21300018: HouseSmall_9
+    21300020: HouseSmall_10
+    21300022: HouseSmall_11
+    21300024: HouseSmall_12
+    21300026: HouseSmall_13
+    21300028: HouseSmall_14
+    21300030: HouseSmall_15
+    21300032: HouseSmall_16
+    21300034: HouseSmall_17
+    21300036: HouseSmall_18
+    21300038: HouseSmall_19
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -60,7 +54,7 @@ TextureImporter:
     mipBias: -1
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -84,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -94,37 +88,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -134,7 +98,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Maison1_0
+      name: HouseSmall_0
       rect:
         serializedVersion: 2
         x: 0
@@ -148,7 +112,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Maison1_1
+      name: HouseSmall_1
       rect:
         serializedVersion: 2
         x: 16
@@ -162,7 +126,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Maison1_2
+      name: HouseSmall_2
       rect:
         serializedVersion: 2
         x: 32
@@ -176,7 +140,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Maison1_3
+      name: HouseSmall_3
       rect:
         serializedVersion: 2
         x: 48
@@ -190,7 +154,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Maison1_4
+      name: HouseSmall_4
       rect:
         serializedVersion: 2
         x: 0
@@ -204,7 +168,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Maison1_5
+      name: HouseSmall_5
       rect:
         serializedVersion: 2
         x: 16
@@ -218,7 +182,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Maison1_6
+      name: HouseSmall_6
       rect:
         serializedVersion: 2
         x: 32
@@ -232,7 +196,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Maison1_7
+      name: HouseSmall_7
       rect:
         serializedVersion: 2
         x: 48
@@ -246,7 +210,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Maison1_8
+      name: HouseSmall_8
       rect:
         serializedVersion: 2
         x: 0
@@ -260,7 +224,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Maison1_9
+      name: HouseSmall_9
       rect:
         serializedVersion: 2
         x: 16
@@ -274,7 +238,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Maison1_10
+      name: HouseSmall_10
       rect:
         serializedVersion: 2
         x: 32
@@ -288,7 +252,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Maison1_11
+      name: HouseSmall_11
       rect:
         serializedVersion: 2
         x: 48
@@ -302,7 +266,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Maison1_12
+      name: HouseSmall_12
       rect:
         serializedVersion: 2
         x: 0
@@ -316,7 +280,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Maison1_13
+      name: HouseSmall_13
       rect:
         serializedVersion: 2
         x: 16
@@ -330,7 +294,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Maison1_14
+      name: HouseSmall_14
       rect:
         serializedVersion: 2
         x: 32
@@ -344,7 +308,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Maison1_15
+      name: HouseSmall_15
       rect:
         serializedVersion: 2
         x: 48
@@ -358,7 +322,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Maison1_16
+      name: HouseSmall_16
       rect:
         serializedVersion: 2
         x: 0
@@ -372,7 +336,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Maison1_17
+      name: HouseSmall_17
       rect:
         serializedVersion: 2
         x: 16
@@ -386,7 +350,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Maison1_18
+      name: HouseSmall_18
       rect:
         serializedVersion: 2
         x: 32
@@ -400,7 +364,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Maison1_19
+      name: HouseSmall_19
       rect:
         serializedVersion: 2
         x: 48

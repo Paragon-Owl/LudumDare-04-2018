@@ -1,28 +1,22 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 43cf9e09d59fed84d8b6782b302e022b
-=======
-guid: be6262df4eb73c64eb4a342fc1b99da7
->>>>>>> fc0519f005061bdfddcdc02c6cc01e04247cf70e
-timeCreated: 1524385912
-licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Camion_0
-    21300002: Camion_1
-    21300004: Camion_2
-    21300006: Camion_3
-    21300008: Camion_4
-    21300010: Camion_5
-    21300012: Camion_6
-    21300014: Camion_7
-    21300016: Camion_8
-    21300018: Camion_9
-    21300020: Camion_10
-    21300022: Camion_11
-    21300024: Camion_12
-    21300026: Camion_13
-    21300028: Camion_14
+    21300000: Truck_0
+    21300002: Truck_1
+    21300004: Truck_2
+    21300006: Truck_3
+    21300008: Truck_4
+    21300010: Truck_5
+    21300012: Truck_6
+    21300014: Truck_7
+    21300016: Truck_8
+    21300018: Truck_9
+    21300020: Truck_10
+    21300022: Truck_11
+    21300024: Truck_12
+    21300026: Truck_13
+    21300028: Truck_14
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -55,7 +49,7 @@ TextureImporter:
     mipBias: -1
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -79,7 +73,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -89,37 +83,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -129,7 +93,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Camion_0
+      name: Truck_0
       rect:
         serializedVersion: 2
         x: 0
@@ -143,7 +107,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Camion_1
+      name: Truck_1
       rect:
         serializedVersion: 2
         x: 16
@@ -157,7 +121,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Camion_2
+      name: Truck_2
       rect:
         serializedVersion: 2
         x: 32
@@ -171,7 +135,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Camion_3
+      name: Truck_3
       rect:
         serializedVersion: 2
         x: 48
@@ -185,7 +149,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Camion_4
+      name: Truck_4
       rect:
         serializedVersion: 2
         x: 64
@@ -199,7 +163,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Camion_5
+      name: Truck_5
       rect:
         serializedVersion: 2
         x: 0
@@ -213,7 +177,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Camion_6
+      name: Truck_6
       rect:
         serializedVersion: 2
         x: 16
@@ -227,7 +191,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Camion_7
+      name: Truck_7
       rect:
         serializedVersion: 2
         x: 32
@@ -241,7 +205,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Camion_8
+      name: Truck_8
       rect:
         serializedVersion: 2
         x: 48
@@ -255,7 +219,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Camion_9
+      name: Truck_9
       rect:
         serializedVersion: 2
         x: 64
@@ -269,7 +233,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Camion_10
+      name: Truck_10
       rect:
         serializedVersion: 2
         x: 0
@@ -283,7 +247,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Camion_11
+      name: Truck_11
       rect:
         serializedVersion: 2
         x: 16
@@ -297,7 +261,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Camion_12
+      name: Truck_12
       rect:
         serializedVersion: 2
         x: 32
@@ -311,7 +275,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Camion_13
+      name: Truck_13
       rect:
         serializedVersion: 2
         x: 48
@@ -325,7 +289,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Camion_14
+      name: Truck_14
       rect:
         serializedVersion: 2
         x: 64

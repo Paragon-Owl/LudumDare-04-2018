@@ -10,6 +10,7 @@ public class Player : MonoBehaviour {
 	private Vector3 Axis = Vector3.zero;
 
 	private Vector2 aimDir;
+	private Vector2 fireDirection = Vector2.right;
 	public Weapon equipedWeapon;
 	public Animator spriteAnimator;
 	public List<string> animationNames = new List<string>{
@@ -50,6 +51,11 @@ public class Player : MonoBehaviour {
 		else
 			AimMouse();
 
+		fireDirection = aimDir!=Vector2.zero? //tern1 start
+								aimDir:	//true tern1
+								Axis!=Vector3.zero? //false tern1, tern2 start
+									new Vector2(Axis.x, Axis.y): //true tern2
+									fireDirection; //false tern2
 
 		Animation();
 
@@ -61,7 +67,9 @@ public class Player : MonoBehaviour {
 	void FixedUpdate()
 	{
 		if(isFiring && equipedWeapon!= null)
-			equipedWeapon.Fire(aimDir!=Vector2.zero?aimDir:new Vector2(Axis.x, Axis.y));
+		{
+			equipedWeapon.Fire(fireDirection);
+		}
 
 		GetComponent<Rigidbody2D>().MovePosition(Vector2.MoveTowards(transform.position, transform.position + Axis , speed * Time.fixedDeltaTime));
 

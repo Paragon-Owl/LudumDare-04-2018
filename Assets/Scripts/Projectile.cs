@@ -9,6 +9,14 @@ public class Projectile : MonoBehaviour {
 	public float drag = 0.1f;
 	public float damage;
 
+	/// <summary>
+	/// Start is called on the frame when a script is enabled just before
+	/// any of the Update methods is called the first time.
+	/// </summary>
+	void Start()
+	{
+	}
+
 	// Update is called once per frame
 	void Update () {
 		Vector2 v = direction*speed*Time.deltaTime;
@@ -21,7 +29,7 @@ public class Projectile : MonoBehaviour {
 
 	public void AddForce(Vector2 direction, float force)
 	{
-		this.direction = direction;
+		this.direction = direction.normalized;
 		speed = force;
 	}
 
@@ -32,13 +40,13 @@ public class Projectile : MonoBehaviour {
 	/// <param name="other">The other Collider2D involved in this collision.</param>
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		/*Enemy en = other.gameObject.GetComponent<Enemy>();
+		EnemyMovement en = other.gameObject.GetComponent<EnemyMovement>();
 
 		if(en)
 		{
 			Debug.Log("EnemyCollision");
 		}
 
-		Destroy(gameObject);*/
+		Destroy(gameObject);
 	}
 }

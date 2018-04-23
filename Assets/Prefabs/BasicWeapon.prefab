@@ -166,7 +166,7 @@ MonoBehaviour:
   ReloadSound: {fileID: 8300000, guid: b4f81dc556bda8d4daf71992ce40dedd, type: 3}
   projectile: {fileID: 1174929517454596, guid: ef4aa7d3083099b40b2877153cd19add, type: 2}
   projectileAnchor: {fileID: 4517426745320392}
-  reloadTime: 10
-  fireRate: 5.01
-  ammunitionCapacity: 10
+  reloadTime: 2
+  fireRate: 10
+  ammunitionCapacity: 32
   ammunitionSpeed: 10

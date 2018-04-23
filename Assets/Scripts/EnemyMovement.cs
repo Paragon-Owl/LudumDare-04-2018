@@ -13,6 +13,22 @@ public class EnemyMovement : MonoBehaviour
     private Vector2[] path;
     private int actualTargetIndex = 1;
     private const int Speed = 10;
+    
+    private Animator spriteAnimator;
+    private List<string> animationNames = new List<string>{
+        "ZombieEast",
+        "ZombieNorthEast",
+        "ZombieNorth",
+        "ZombieNorthWest",
+        "ZombieWest",
+        "ZombieSouthWest",
+        "ZombieSouth",
+        "ZombieSouthEast"
+    };
+
+    public void Start() {
+        spriteAnimator = GetComponent<Animator>();
+    }
 
 
     void FixedUpdate()
@@ -34,10 +50,20 @@ public class EnemyMovement : MonoBehaviour
             {
                 actualTargetIndex++;
             }
-
         }
+        Animate();
     }
 
+    private void Animate() {
+        var dir = target.position - transform.position;
+        float angle = Vector3.Angle(Vector3.right, dir);
+        if(dir.y < 0)
+            angle = 360-angle;
+
+        angle+=Mathf.Rad2Deg*(Mathf.PI/8f);
+        spriteAnimator.Play(animationNames[Mathf.FloorToInt(angle/45f)%animationNames.Count]);
+    }
+    
     void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("J'encule ta mere");

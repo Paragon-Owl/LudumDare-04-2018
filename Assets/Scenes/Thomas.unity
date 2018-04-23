@@ -335,7 +335,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &479380639
 MonoBehaviour:
@@ -412,6 +412,11 @@ Prefab:
       propertyPath: m_Size.y
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114401764816656958, guid: 945a2d0d6dc3143459bae955756eee89,
+        type: 2}
+      propertyPath: spriteAnimator
+      value: 
+      objectReference: {fileID: 1951141473}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 945a2d0d6dc3143459bae955756eee89, type: 2}
   m_IsPrefabParent: 0
@@ -1589,7 +1594,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4927618903495550, guid: 55061e6bcdd3d9344b5c87e8bb0da4e5, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 55061e6bcdd3d9344b5c87e8bb0da4e5, type: 2}
@@ -1816,5 +1821,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}

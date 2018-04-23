@@ -35,11 +35,11 @@ public class ItemSelector : MonoBehaviour {
 			}
 		}
 
-		if (index != -1) {
+
 			foreach (Image image in ItemsGUI) {
 				image.color = Color.white;
 			}
-			ItemsGUI[index].color = activeColor; //new Color(255 / 255.0f, 208 / 255.0f, 171 / 255.0f, 255 / 255.0f);
-		}
+			ItemsGUI[player.equipedObjectIndex%myKeys.Count].color = activeColor; //new Color(255 / 255.0f, 208 / 255.0f, 171 / 255.0f, 255 / 255.0f);
+
 	}
 }

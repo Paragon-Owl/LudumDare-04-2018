@@ -1,9 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using TMPro;
 public class TopBarScript : MonoBehaviour {
 
+	public GameManager gameManager;
 	public TMP_Text truck;
 	private string truck_text_base;
 	public TMP_Text inventory;
@@ -20,9 +22,9 @@ public class TopBarScript : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		inventory.text = inven_text_base + "50";
-		time.text = time_text_base + Time.time;
+		inventory.text = inven_text_base + gameManager.player.inventory.getQuantityForAll().ToString();
+		time.text = time_text_base + Mathf.FloorToInt(gameManager.remainingTimeBeforeDelivery());
 		string tmp = truck_text_base;
-		truck.text = tmp.Replace("x", "60");
+		truck.text = tmp.Replace("x", gameManager.amountDelivery.ToString());
 	}
 }

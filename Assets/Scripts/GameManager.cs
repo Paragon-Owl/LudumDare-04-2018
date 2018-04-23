@@ -8,13 +8,14 @@ public class GameManager : MonoBehaviour
     public double TimeBetweenDeliveries;
     public double TimeBetweenWaves;
     public EnemySpawner spawner;
+    public Player player;
 
     private double lastDay;
     private double lastDelivery;
     private double lastWave;
 
     private int nbOfDay;
-    private int amountDelivery;
+    public int amountDelivery;
     private int amountOfEnemy;
 
     private int actualStockInTruck;
@@ -76,6 +77,11 @@ public class GameManager : MonoBehaviour
     public void addInTruckStock(int quantity)
     {
         actualStockInTruck += quantity;
+    }
+
+    public float remainingTimeBeforeDelivery()
+    {
+        return (float)(TimeBetweenDeliveries - (Time.time - lastDelivery));
     }
 
 }

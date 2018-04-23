@@ -151,7 +151,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1221474252752204}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.505, y: 0.505, z: 0}
+  m_LocalPosition: {x: 3.2, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4634841181408154}
@@ -454,6 +454,7 @@ MonoBehaviour:
   equipedObjectIndex: 0
   equipedObject: {fileID: 114340939320292066}
   spriteAnimator: {fileID: 95772367546523664}
+  inventory: {fileID: 114477280921018848}
   animationNames:
   - PlayerEast
   - PlayerNorthEast

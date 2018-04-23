@@ -28,6 +28,16 @@ public class PlayerInventory : MonoBehaviour
 		return passifInventory;
 	}
 
+	public int getQuantityForAll()
+	{
+		int count = 0;
+		foreach (var item in passifInventory)
+		{
+			count += item.Value;
+		}
+		return count;
+	}
+
 	public int fill(int quantityNeeded)
 	{
 		int whatIhave = 0;

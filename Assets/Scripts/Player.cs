@@ -12,7 +12,6 @@ public class Player : MonoBehaviour
 	public float speed = 1f;
 	private Vector3 Axis = Vector3.zero;
 	public int equipedObjectIndex = 0;
-
 	private Vector2 aimDir;
 	private Vector2 fireDirection = Vector2.right;
 	public UsableObject equipedObject;
@@ -50,24 +49,26 @@ public class Player : MonoBehaviour
 			{
 				int quantityNeeded = GameManager.getTruckStockMissing();
 				int quantityAvailable = inventory.fill(quantityNeeded);
-				GameManager.addInTruckStock(quantityAvailable);	
+				GameManager.addInTruckStock(quantityAvailable);
 			}
 			int count = GetComponentInChildren<Pickup>().getCrops();
 			if(count > 0)
 				GetComponent<PlayerInventory>().addItem(GetComponent<PlayerInventory>().getItemFromIndex(3), count);
 		}
 
-		if(CrossPlatformInputManager.GetButton("InventoryLeft"))
+		if(CrossPlatformInputManager.GetButtonDown("InventoryRight"))
 		{
 			equipableObject[equipedObjectIndex%equipableObject.Count].SetActive(false);
 			equipedObjectIndex++;
 			equipableObject[equipedObjectIndex%equipableObject.Count].SetActive(true);
+			equipedObject = equipableObject[equipedObjectIndex%equipableObject.Count].GetComponent<UsableObject>();
 		}
-		else if(CrossPlatformInputManager.GetButton("InventoryRight"))
+		else if(CrossPlatformInputManager.GetButtonDown("InventoryLeft"))
 		{
 			equipableObject[equipedObjectIndex%equipableObject.Count].SetActive(false);
-			equipedObjectIndex--;
+			equipedObjectIndex = equipedObjectIndex==0?equipableObject.Count:equipedObjectIndex-1;
 			equipableObject[equipedObjectIndex%equipableObject.Count].SetActive(true);
+			equipedObject = equipableObject[equipedObjectIndex%equipableObject.Count].GetComponent<UsableObject>();
 		}
 
 		// Player Movement (directionVector)

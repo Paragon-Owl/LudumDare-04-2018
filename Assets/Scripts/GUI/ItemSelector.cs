@@ -11,18 +11,17 @@ public class ItemSelector : MonoBehaviour {
 	private Player player;
 
 	private ArrayList myKeys;
-	private int activeKey;
 
 	private Image[] ItemsGUI;
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-		activeKey = 0;
 		ItemsGUI = gameObject.GetComponentsInDirectChildren<Image>();
-		foreach (Image image in ItemsGUI) {
+		ItemsGUI[0].color = activeColor;
+		/*foreach (Image image in ItemsGUI) {
 			Debug.Log(image);
-		}
-		myKeys = new ArrayList {KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4, KeyCode.Alpha5};
+		}*/
+		myKeys = new ArrayList {KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3};//, KeyCode.Alpha4, KeyCode.Alpha5};
 	}
 	
 	// Update is called once per frame
@@ -31,9 +30,11 @@ public class ItemSelector : MonoBehaviour {
 		foreach(KeyCode key in myKeys) {
 			if (Input.GetKeyDown(key)) {
 				index = myKeys.IndexOf(key);
-
+				player.equipedObjectIndex = index;
+				player.equipedObject = player.equipableObject[index].GetComponent<UsableObject>();
 			}
 		}
+
 		if (index != -1) {
 			foreach (Image image in ItemsGUI) {
 				image.color = Color.white;

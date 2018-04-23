@@ -16,9 +16,9 @@ public class FieldTile : MonoBehaviour {
 	public Vector3Int tile;
 	public State currentState;
 	private float lastGrowingTime;
-	public float timeToGrowing = 5f;
-	public float timeToGrown = 5f;
-	public float timeToHarvest = 5f;
+	public float timeToGrowing = 15f;
+	public float timeToGrown = 30f;
+	public float timeToHarvest = 60f;
 	private bool changed = false;
 
 

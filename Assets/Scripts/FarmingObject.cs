@@ -18,6 +18,14 @@ public abstract class FarmingObject : UsableObject {
 		collider.size*=0.5f;
 	}
 
+	/// <summary>
+	/// Update is called every frame, if the MonoBehaviour is enabled.
+	/// </summary>
+	void Update()
+	{
+		collider.enabled = false;
+	}
+
 	public abstract void Apply(FieldTile tile);
 
 	override public void Use(Vector2 direction)
